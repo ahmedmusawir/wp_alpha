@@ -53,6 +53,8 @@
 				</footer>
 
 			</article>
+			
+			<?php comments_template(); ?>
 		<?php endwhile ?>
 	</div>
 	<!-- end main-content -->
