@@ -22,8 +22,8 @@
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
 		<!-- Bootstrap CSS -->
-		<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,8 +41,45 @@
 
 		<?php wp_head(); ?>
 	</head>
-	<body>
-		<h1 class="jumbotron"><?php bloginfo( 'name' ); ?></h1>
+	<body <?php body_class(); ?>>
+
+		<!-- HEADER -->
+		<header class="site-header" role="banner">
+			
+			<div class="container header-contents">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="site-logo">
+							Site Title:
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							<p>Site Description:	<?php bloginfo( 'description' ); ?></p>
+						</div>
+						<!-- end site logo -->
+					</div>
+					<!-- end col-xs-3 -->
+					<div class="col-xs-9">
+						<nav class="site-navigation" role="navigation">
+							<?php 
+								wp_nav_menu(
+									array(
+										'theme_location' => 'main-menu',
+										'menu_class' => 'site-menu'
+									)
+								);
+							?>
+						</nav>		
+					</div>
+					<!-- end col-xs-9 -->
+				</div>
+				<!-- end row -->
+			</div>
+			<!-- end container -->
+		</header>
+		<!-- end site header -->
+
+		<!-- MAIN CONTENT AREA -->
+		<div class="container">
+			<div class="row">
 
 
 

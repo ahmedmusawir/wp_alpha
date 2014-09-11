@@ -94,7 +94,7 @@ if ( ! function_exists( 'alpha_setup' ) ) {
 		
 	}
 
-	add_action('after_theme_setup', 'alpha_setup');
+	add_action('after_setup_theme', 'alpha_setup');
 
 }
 /*-----  End of 4.0 - Setup theme default and register various supported features  ------*/
@@ -184,6 +184,45 @@ if ( ! function_exists( 'alpha_paging_nav' )) {
 
 /*-----  End of 6.0 - Display navigation to next/previous set of posts.  ------*/
 
+
+/*========================================================
+=            7.0 - Register the widget areas.            =
+========================================================*/
+if ( ! function_exists('alpha_widget_init' ) ) {
+	function alpha_widget_init() {
+		if ( function_exists( 'register_sidebar' ) ) {
+			register_sidebar(
+				array(
+					'name' => __( 'Main Widget Area', 'alpha'),
+					'id' => 'sidebar-1',
+					'description' => __( 'Apprears on posts and pages.', 'alpha' ),
+					'before_widget' => '<div id="%1$s" class="widget %2$s">',
+					'after_widget' => '<div> <!-- end widget -->',
+					'before_title' => '<h5 class="widget-title">',
+					'after_title' => '</h5>'
+
+				)
+			);
+			register_sidebar(
+				array(
+					'name' => __( 'Footer Widget Area', 'alpha'),
+					'id' => 'sidebar-2',
+					'description' => __( 'Apprears on the footer.', 'alpha' ),
+					'before_widget' => '<div id="%1$s" class="widget col-sm-3 %2$s">',
+					'after_widget' => '<div> <!-- end footer widget -->',
+					'before_title' => '<h5 class="widget-title">',
+					'after_title' => '</h5>'
+
+				)
+			);
+		}
+	}
+
+	add_action( 'widgets_init', 'alpha_widget_init' );
+}
+
+
+/*-----  End of 7.0 - Register the widget areas.  ------*/
 
 
 
