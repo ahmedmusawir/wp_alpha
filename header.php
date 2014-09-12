@@ -5,7 +5,7 @@
 *
 **/
 	//Get the favicon
-	$favicon = IMAGES . '/icons/favicon.png';
+	$favicon = IMAGES . '/icons/favicon.ico';
 	//Get the custom touch icon.
 	$touch_icon = IMAGES . '/icons/apple-touch-icon-152x152-precomposed.png';
 
@@ -22,7 +22,7 @@
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>">
 
 		<!-- Bootstrap CSS -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
 		<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,7 +33,7 @@
 		<![endif]-->
 
 		<!-- Favicon and Apple Icons  -->
-		<link rel="shortcut icon" type="text/css" href="<?php echo $favicon; ?>">
+		<link rel="shortcut icon" type="image/x-icon" href="<?php echo $favicon; ?>">
 		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo $touch_icon; ?>">
 		<!-- <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png"> -->
 		<!-- <link rel="apple-touch-icon" sizes="72/72" href="images/icons/apple-touch-icon-72x72.png"> -->
@@ -50,8 +50,7 @@
 				<div class="row">
 					<div class="col-xs-3">
 						<div class="site-logo">
-							Site Title:
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
 							<p>Site Description:	<?php bloginfo( 'description' ); ?></p>
 						</div>
 						<!-- end site logo -->
