@@ -9,7 +9,8 @@
 
 <?php get_header() ?>
 
-<section class="main-content col-md-8">
+<section class="main-content col-md-8" role="main">
+	<!-- <h1>I am index.php</h1> -->
 
 	<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 			
